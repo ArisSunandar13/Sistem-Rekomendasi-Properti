@@ -1,0 +1,130 @@
+div.header {
+  gap: 20px;
+  height: max-content;
+}
+
+div.header img {
+  width: 100%;
+}
+
+div.header mat-card {
+  background-color: #000000a0;
+  width: 500px;
+  height: auto;
+  margin: calc(0px - 150px) auto 0px;
+}
+
+span.label {
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.search {
+  width: 100%;
+  margin-top: 15px;
+}
+
+div.dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.label-mat-menu {
+  padding: 0px 16px;
+  color: grey;
+}
+
+span.label-icon-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+div.harga {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+
+div.input-harga {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-harga mat-form-field {
+  width: 47.5%;
+}
+
+div.actions-harga {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions-harga button.hapus-harga {
+  background-color: transparent;
+  color: white;
+}
+
+/* CONTENT */
+div.content {
+  margin-top: 20px;
+}
+
+div.proyek-terkini {
+  background-color: #00000010;
+  padding: 20px 5%;
+}
+
+div.header-proyek-terkini {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span.label-proyek-terkini {
+  font-size: large;
+}
+
+button.button-proyek-terkini {
+  background-color: transparent;
+  color: red;
+}
+
+div.main-proyek-terkini {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2%;
+}
+
+.main-proyek-terkini mat-card {
+  width: 23%;
+}
+
+img.gambar-proyek-terkini {
+  width: 100%;
+  height: 210px;
+}
+
+mat-card-content.deskripsi-proyek-terkini {
+  margin-top: 10px;
+}
+
+span.nama-proyek-tekini {
+  font-weight: bold;
+}
+
+p.lokasi-proyek-terkini {
+  font-size: small;
+  color: grey;
+}
+
+div.kategori-khusus {
+  padding: 20px 5%;
+}

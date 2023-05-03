@@ -1,0 +1,60 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 0px 5%;
+}
+
+div.left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+div.left span {
+  font-size: x-large;
+}
+
+div.left mat-button-toggle-group {
+  border: none;
+  border-radius: 0;
+}
+
+div.left mat-button-toggle-group mat-button-toggle {
+  border: none;
+  font-size: medium;
+}
+
+div.right {
+  display: flex;
+  align-items: center;
+}
+
+div.right button mat-icon {
+  color: red;
+}
+
+footer {
+  font-size: smaller;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000cc;
+  padding: 0px 5%;
+  height: 40px;
+}
+
+footer div.link {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.link a {
+  color: white;
+}
+
+.copyright p {
+  margin: 0px;
+  color: white;
+}

@@ -1,0 +1,164 @@
+<div class="header">
+    <img src="../../../assets/img/slide-3.jpg" alt="home" width="100%">
+
+    <mat-card>
+        <mat-card-content>
+            <mat-tab-group dynamicHeight>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span class="label">Beli</span>
+                    </ng-template>
+
+                    <mat-form-field class="search">
+                        <mat-label>Cari Lokasi</mat-label>
+                        <input matInput type="text" [(ngModel)]="searchValue">
+                        <button *ngIf="searchValue" matSuffix mat-button (click)="searchValue=''">
+                            <span>Cari</span>
+                        </button>
+                    </mat-form-field>
+
+                    <div class="dropdown">
+                        <button mat-button [matMenuTriggerFor]="menu1">
+                            <span class="label-icon-right">{{residential}} <mat-icon>expand_more</mat-icon></span>
+                        </button>
+                        <mat-menu #menu1>
+                            <span class="label-mat-menu">Tipe Properti :</span>
+                            <button mat-menu-item (click)="residential = 'Semua Residential'">Semua Residential</button>
+                            <button mat-menu-item (click)="residential = 'Rumah'">Rumah</button>
+                            <button mat-menu-item (click)="residential = 'Apartemen'">Apartemen</button>
+                            <button mat-menu-item (click)="residential = 'Tanah'">Tanah</button>
+                            <button mat-menu-item (click)="residential = 'Vila'">Vila</button>
+                        </mat-menu>
+
+                        <button mat-button (click)="isHarga = !isHarga">
+                            <span class="label-icon-right">Harga <mat-icon>expand_more</mat-icon></span>
+                        </button>
+
+                        <button mat-button [matMenuTriggerFor]="menu3">
+                            <span class="label-icon-right">{{
+                                kamarTidur == 0? 'Kamar Tidur': kamarTidur == 5? '5+ Kamar': kamarTidur + ' Kamar'
+                                }}<mat-icon>expand_more</mat-icon>
+                            </span>
+                        </button>
+                        <mat-menu #menu3>
+                            <div class="kamar-tidur">
+                                <span class="label-mat-menu">Kamar Tidur :</span>
+                                <button mat-menu-item (click)="kamarTidur = 1">1 Kamar</button>
+                                <button mat-menu-item (click)="kamarTidur = 2">2 Kamar</button>
+                                <button mat-menu-item (click)="kamarTidur = 3">3 Kamar</button>
+                                <button mat-menu-item (click)="kamarTidur = 4">4 Kamar</button>
+                                <button mat-menu-item (click)="kamarTidur = 5">5+ Kamar</button>
+                            </div>
+                        </mat-menu>
+                    </div>
+
+                    <div class="harga" *ngIf="isHarga">
+                        <div class="input-harga">
+                            <mat-form-field>
+                                <span matPrefix>Rp.</span>
+                                <input type="number" matInput placeholder="Minimal" [(ngModel)]="hargaMin">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <span matPrefix>Rp.</span>
+                                <input type="number" matInput placeholder="Maximal" [(ngModel)]="hargaMax">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="actions-harga">
+                            <button class="hapus-harga" mat-flat-button
+                                (click)="hargaMin = undefined; hargaMax = undefined">Hapus</button>
+                            <button class="terapkan-harga" color="primary" (click)="terapkanHarga()"
+                                mat-raised-button>Terapkan Filter</button>
+                        </div>
+                    </div>
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <span class="label">Sewa</span>
+                    </ng-template>
+                    Content 2
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="content">
+    <div class="proyek-terkini">
+        <div class="header-proyek-terkini">
+            <span class="label-proyek-terkini">Proyek Terkini</span>
+            <button class="button-proyek-terkini" mat-flat-button>Lihat Lebih Banyak ></button>
+        </div>
+
+        <div class="main-proyek-terkini">
+            <mat-card>
+                <img class="gambar-proyek-terkini" mat-card-image src="../../../assets/img/post-1.jpg">
+                <mat-card-content class="deskripsi-proyek-terkini">
+                    <span class="nama-proyek-terkini">Permata Hijau Suites</span>
+                    <p class="lokasi-proyek-terkini">Jakarta Selatan, DKI Jakarta</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <img class="gambar-proyek-terkini" mat-card-image src="../../../assets/img/post-2.jpg">
+                <mat-card-content class="deskripsi-proyek-terkini">
+                    <span class="nama-proyek-terkini">Batara Park View</span>
+                    <p class="lokasi-proyek-terkini">Tangerang, Banten</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <img class="gambar-proyek-terkini" mat-card-image src="../../../assets/img/post-5.jpg">
+                <mat-card-content class="deskripsi-proyek-terkini">
+                    <span class="nama-proyek-terkini">Bintaro Plaza Residences</span>
+                    <p class="lokasi-proyek-terkini">Tangerang Selatan, Banten</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <img class="gambar-proyek-terkini" mat-card-image src="../../../assets/img/post-4.jpg">
+                <mat-card-content class="deskripsi-proyek-terkini">
+                    <span class="nama-proyek-terkini">Samira Regency Bekasi</span>
+                    <p class="lokasi-proyek-terkini">Bekasi, Jawa Barat</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+
+    <div class="kategori-khusus">
+        <div class="header-proyek-terkini">
+            <span class="label-proyek-terkini">Berdasarkan Kategori Khusus</span>
+            <button class="button-proyek-terkini" mat-flat-button>Lihat Lebih Banyak ></button>
+        </div>
+
+        <div class="main-proyek-terkini">
+            <mat-card>
+                <img class="gambar-proyek-terkini" mat-card-image src="../../../assets/img/post-6.jpg">
+                <mat-card-content class="deskripsi-proyek-terkini">
+                    <span class="nama-proyek-terkini">Permata Hijau Suites</span>
+                    <p class="lokasi-proyek-terkini">Jakarta Selatan, DKI Jakarta</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <img class="gambar-proyek-terkini" mat-card-image src="../../../assets/img/post-7.jpg">
+                <mat-card-content class="deskripsi-proyek-terkini">
+                    <span class="nama-proyek-terkini">Batara Park View</span>
+                    <p class="lokasi-proyek-terkini">Tangerang, Banten</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <img class="gambar-proyek-terkini" mat-card-image src="../../../assets/img/property-1.jpg">
+                <mat-card-content class="deskripsi-proyek-terkini">
+                    <span class="nama-proyek-terkini">Bintaro Plaza Residences</span>
+                    <p class="lokasi-proyek-terkini">Tangerang Selatan, Banten</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <img class="gambar-proyek-terkini" mat-card-image src="../../../assets/img/property-2.jpg">
+                <mat-card-content class="deskripsi-proyek-terkini">
+                    <span class="nama-proyek-terkini">Samira Regency Bekasi</span>
+                    <p class="lokasi-proyek-terkini">Bekasi, Jawa Barat</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
